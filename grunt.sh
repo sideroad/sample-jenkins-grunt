@@ -1,4 +1,5 @@
 export PATH=/path/to/node:/path/to/node/bin:$PATH;
 
-npm install
+
+cp -R /path/to/node_modules ./.
 grunt
