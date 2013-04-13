@@ -30,6 +30,9 @@ module.exports = function(grunt) {
       }
     },
     testem: {
+      options: {
+        launch_in_ci: ['PhantomJS']
+      },
       'test/testem.tap': ['test/*.html']
     }
   });
