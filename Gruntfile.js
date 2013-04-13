@@ -3,7 +3,7 @@ module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-    clean: ['dist/*', 'test/testem.tap'],
+    clean: ['dist/*', 'cov/*', 'test/testem.tap'],
     jshint: {
       all: ['src/*.js'],
       options: {
@@ -34,6 +34,15 @@ module.exports = function(grunt) {
         launch_in_ci: ['PhantomJS']
       },
       'test/testem.tap': ['test/*.html']
+    },
+    "qunit-cov": {
+      test: {
+        minimum: 0.9,
+        srcDir: 'src',
+        depDirs: ['test'],
+        outDir: 'cov',
+        testFiles: ['test/*.html']
+      }
     }
   });
 
@@ -42,8 +51,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-testem');
+  grunt.loadNpmTasks('grunt-qunit-cov');
 
   // Default task(s).
-  grunt.registerTask('default', ['clean', 'jshint', 'testem', 'concat', 'uglify']);
+  grunt.registerTask('default', ['clean', 'jshint', 'testem', 'qunit-cov', 'concat', 'uglify']);
 
 };

@@ -18,6 +18,7 @@
     "grunt-contrib-concat": "~0.2.0",
     "grunt-contrib-jshint": "~0.4.3",
     "grunt-contrib-uglify": "~0.2.0",
-    "grunt-testem": "~0.3.4"
+    "grunt-testem": "~0.3.4",
+    "grunt-qunit-cov": "~0.3.2"
   }
 }
