@@ -1,6 +1,5 @@
-export PATH=/path/to/node:/path/to/node_bin:/path/to/node_lib:$PATH;
+export PATH=/path/to/node:/path/to/node_bin:$PATH;
 
-cp -R /path/to/grunt_node_modules node_modules
-cp -R /path/to/global_node_modules node_modules
-ls -la
+mkdir node_modules
+cp -R /path/to/grunt_node_modules/* node_modules
 grunt
