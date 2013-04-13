@@ -3,20 +3,21 @@ module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-    clean: ['awesome.js', 'awesome.min.js'],
+    clean: ['dist/*', 'test/testem.tap'],
     jshint: {
-      all: ['*.js'],
+      all: ['src/*.js'],
       options: {
         devel: true
       }
     },
     concat: {
-      options: {
-        separator: ';'
-      },
-      dist: {
-        src: ['superb.js', 'impressive.js'],
-        dest: '<%= pkg.name %>.js'
+      build: {
+        files: {
+          'dist/<%= pkg.name %>.js': [
+            'src/superb.js',
+            'src/impressive.js'
+          ]
+        }
       }
     },
     uglify: {
@@ -24,9 +25,12 @@ module.exports = function(grunt) {
         banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
       },
       build: {
-        src: '<%= pkg.name %>.js',
-        dest: '<%= pkg.name %>.min.js'
+        src: 'dist/<%= pkg.name %>.js',
+        dest: 'dist/<%= pkg.name %>.min.js'
       }
+    },
+    testem: {
+      'test/testem.tap': ['test/*.html']
     }
   });
 
@@ -34,8 +38,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-testem');
 
   // Default task(s).
-  grunt.registerTask('default', ['clean', 'jshint', 'concat', 'uglify']);
+  grunt.registerTask('default', ['clean', 'jshint', 'testem', 'concat', 'uglify']);
 
 };
