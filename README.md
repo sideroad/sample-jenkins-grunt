@@ -37,7 +37,7 @@ Concatenate files
 Minify files with UglifyJS
 
 ## jenkins-grunt.sh
-  - Add node and phatomjs path to PATH environment variable.
+  - Add node and phatomjs and jscoverage path to PATH environment variable.
   - Copy grunt_node_modules into local directory ( `npm install` is prefer than copy )
   - Execute grunt
 
