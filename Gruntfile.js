@@ -54,6 +54,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-qunit-cov');
 
   // Default task(s).
-  grunt.registerTask('default', ['clean', 'jshint', 'testem', 'qunit-cov', 'concat', 'uglify']);
+  grunt.registerTask('default', ['jshint', 'testem', 'clean', 'qunit-cov', 'concat', 'uglify']);
 
 };
