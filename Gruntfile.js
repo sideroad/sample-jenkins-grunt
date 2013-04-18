@@ -44,6 +44,7 @@ module.exports = function(grunt) {
     },
     plato: {
       options: {
+        title: 'Awesome Project',
         jshint: grunt.file.readJSON('.jshintrc')
       },
       metrics: {
