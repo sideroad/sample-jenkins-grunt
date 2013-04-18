@@ -64,10 +64,15 @@ module.exports = function(grunt) {
 
   // Default task(s).
 <<<<<<< HEAD
+<<<<<<< HEAD
   grunt.registerTask('default', ['jshint', 'testem', 'clean', 'qunit-cov']);
   grunt.registerTask('jenkins', ['jshint', 'testem', 'clean', 'qunit-cov', 'concat', 'uglify']);
 =======
   grunt.registerTask('default', ['jshint', 'testem', 'clean', 'qunit-cov', 'plato', 'concat', 'uglify']);
 
 >>>>>>> Separate jshint options from Gruntfile.js, Add plato plugin
+=======
+  grunt.registerTask('default', ['jshint', 'testem', 'clean', 'qunit-cov']);
+  grunt.registerTask('jenkins', ['jshint', 'testem', 'clean', 'qunit-cov', 'plato', 'concat', 'uglify']);
+>>>>>>> Add jenkins task
 };
