@@ -3,7 +3,7 @@ module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-    clean: ['dist/*', 'cov/*', 'test/testem.tap'],
+    clean: ['dist/*.js', 'test/testem.tap'],
     jshint: {
       all: ['src/*.js'],
       options: grunt.file.readJSON('.jshintrc')
@@ -38,7 +38,7 @@ module.exports = function(grunt) {
         minimum: 0.9,
         srcDir: 'src',
         depDirs: ['test'],
-        outDir: 'cov',
+        outDir: 'dist/cov',
         testFiles: ['test/*.html']
       }
     },
